@@ -1,4 +1,4 @@
-# Brown Rabbit
+# Purple Rabbit
 
 This is the job test if you wish to be a DevOps developer at Twentyfour
 
