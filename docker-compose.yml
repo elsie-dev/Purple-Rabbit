@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  proxy:
+    image: nginx:1.11
+    ports:
+       - '80:80' 
+    volumes:
+      - ./etc/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+  web:
+    build: ./etc/httpd
+    volumes:
+      - ./src:/var/www/html
+  db:
+    image: mariadb
+    restart: always
+  php-fpm:
+    build: ./etc/php
