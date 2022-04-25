@@ -18,7 +18,7 @@ When you have completed this test you will have demonstrated skills/knowledge in
 
 You'll need to have docker and docker-compose installed, you have to use the nginx as reverse proxy to a apache/httpd web server that then proxies to php-fpm. The reason we are doing it this way is so that you demonstrate you understand basic web server knowledge. You are free to choose your own images for the database, phpmyadmin. For php you have to use wordpress:phpX.X-fpm, so wordpress:php7.4-fpm. Would be valid, you cannot use a wordpress image that contains apache.
 
-NGINX -> APACHE/WEB -> PHP-FPM
+NGINX -> APACHE/HTTPD -> PHP-FPM
 
 ## Bonus Tasks
 
