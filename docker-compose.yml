@@ -4,15 +4,34 @@ services:
   proxy:
     image: nginx:1.11
     ports:
-       - '80:80' 
+       - '80:80'
     volumes:
       - ./etc/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - web
+
   web:
-    build: ./etc/httpd
+    image: httpd:latest
+    container_name: apache
+    build:  ./etc/httpd
     volumes:
       - ./src:/var/www/html
+    depends_on:
+      - php-fpm
+
   db:
     image: mariadb
+    container_name: db
     restart: always
+    volumes:
+     - db_data:/var/lib/mysql
+
   php-fpm:
-    build: ./etc/php
+    image: wordpress:php7.4-fpm
+    container_name: php
+    # build: ./etc/php
+    volumes:
+     - ./src:/var/www/html
+
+volumes:
+  db_data:
