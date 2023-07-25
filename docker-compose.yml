@@ -23,15 +23,41 @@ services:
     image: mariadb
     container_name: db
     restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    # volumes:
+    #  - db_data:/var/lib/mysql
     volumes:
-     - db_data:/var/lib/mysql
+      - ./backup.sql:/docker-entrypoint-initdb.d/backup.sql
 
   php-fpm:
     image: wordpress:php7.4-fpm
     container_name: php
-    # build: ./etc/php
     volumes:
      - ./src:/var/www/html
+
+  adminer:
+    image: adminer
+    container_name: adminer
+    ports:
+      - '8080:8080'
+    depends_on:
+      - db
+
+  mariadb:
+    image: mariadb
+    container_name: my-mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    volumes:
+      - ./backup.sql:/docker-entrypoint-initdb.d/dump.sql
 
 volumes:
   db_data:
