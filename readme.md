@@ -42,3 +42,6 @@ To complete this test.
 11. Create a pull request to this repository
 
 The task is done, when you I (Lars) can clone the project and run docker-compose up and have a working wordpress solution, without having to go through to wordpress installer. You don't have to follow everything here head to toes. If you find different ways to solve the problems, feel free to do so.
+
+STEPS:
+The docker compose up -d command should be able to start wordpress
