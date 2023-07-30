@@ -4,7 +4,7 @@ The job test for Twentyfour.
 
 ## Contents
 
-When you have completed this test you will have demonstrated skills/knowledge in
+When you have completed this test you will have demonstrated skills/knowledge in:
 
 - docker
 - mariadb
