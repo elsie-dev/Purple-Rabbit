@@ -1,6 +1,6 @@
 # Purple Rabbit
 
-This is the job test if you wish to join the DevOps team here at Twentyfour.
+The job test for Twentyfour.
 
 ## Contents
 
