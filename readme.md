@@ -45,3 +45,4 @@ The task is done, when you I (Lars) can clone the project and run docker-compose
 
 STEPS:
 The **docker compose up -d** command should be able to start wordpress
+Note: Recent changes made to the bitbucket repo
